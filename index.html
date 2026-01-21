@@ -33,6 +33,26 @@
     </a-sphere>
     <!-- Light -->
     <a-entity light="type: point; intensity: 2; distance: 100" position="0 0 0"></a-entity>
+
+    <!-- Orbital Paths -->
+    <a-entity id="orbital-paths">
+      <a-ring rotation="-90 0 0" radius-inner="4.95" radius-outer="5.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Mercury -->
+      <a-ring rotation="-90 0 0" radius-inner="7.95" radius-outer="8.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Venus -->
+      <a-ring rotation="-90 0 0" radius-inner="10.95" radius-outer="11.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Earth -->
+      <a-ring rotation="-90 0 0" radius-inner="13.95" radius-outer="14.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Mars -->
+      <a-ring rotation="-90 0 0" radius-inner="17.95" radius-outer="18.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Jupiter -->
+      <a-ring rotation="-90 0 0" radius-inner="21.95" radius-outer="22.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Saturn -->
+      <a-ring rotation="-90 0 0" radius-inner="25.95" radius-outer="26.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Uranus -->
+      <a-ring rotation="-90 0 0" radius-inner="29.95" radius-outer="30.05" color="#ffffff" opacity="0.2"
+        material="side: double"></a-ring> <!-- Neptune -->
+    </a-entity>
     <!-- Mercury -->
     <a-entity id="mercury-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
       <a-sphere position="5 0 0" radius="0.4" src="#mercury-tex"></a-sphere>
