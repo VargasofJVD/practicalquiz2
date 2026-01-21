@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>PS-CSC-22-0091 Solar System - 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+</head>
+
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="sun-tex" src="texture/2k_sun.jpg">
+      <img id="mercury-tex" src="texture/2k_mercury.jpg">
+      <img id="venus-tex" src="texture/2k_venus_surface.jpg">
+      <img id="earth-tex" src="texture/2k_earth_daymap.jpg">
+      <img id="earth-norm" src="texture/2k_earth_normal_map.tif">
+      <img id="moon-tex" src="texture/2k_moon.jpg">
+      <img id="mars-tex" src="texture/2k_mars.jpg">
+      <img id="jupiter-tex" src="texture/2k_jupiter.jpg">
+      <img id="saturn-tex" src="texture/2k_saturn.jpg">
+      <img id="saturn-ring-tex" src="texture/2k_saturn_ring_alpha.png">
+      <img id="uranus-tex" src="texture/2k_uranus.jpg">
+      <img id="neptune-tex" src="texture/2k_neptune.jpg">
+      <img id="stars-tex" src="texture/2k_stars.jpg">
+    </a-assets>
+
+    <a-sky src="#stars-tex"></a-sky>
+    <!-- Sun -->
+    <a-sphere id="sun" position="0 0 0" radius="3" material="src: #sun-tex; shader: flat"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 20000; easing: linear">
+    </a-sphere>
+    <!-- Light -->
+    <a-entity light="type: point; intensity: 2; distance: 100" position="0 0 0"></a-entity>
+    <!-- Mercury -->
+    <a-entity id="mercury-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+      <a-sphere position="5 0 0" radius="0.4" src="#mercury-tex"></a-sphere>
+    </a-entity>
+    <!-- Venus -->
+    <a-entity id="venus-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 8000; easing: linear">
+      <a-sphere position="8 0 0" radius="0.7" src="#venus-tex"></a-sphere>
+    </a-entity>
+    <!-- Earth -->
+    <a-entity id="earth-orbit-container"
+      animation="property: rotation; to: 0 360 0; loop: true; dur: 12000; easing: linear">
+
+      <a-sphere id="earth" position="11 0 0" radius="0.8"
+        material="src: #earth-tex; normalMap: #earth-norm; normalTextureRepeat: 1 1"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 5000; easing: linear">
+      </a-sphere>
+
+      <a-entity id="moon-orbit" position="11 0 0"
+        animation="property: rotation; to: 0 360 0; loop: true; dur: 2000; easing: linear">
+        <a-sphere id="moon" position="1.5 0 0" radius="0.2" src="#moon-tex"></a-sphere>
+      </a-entity>
+    </a-entity>
+    <!-- Mars -->
+    <a-entity id="mars-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 15000; easing: linear">
+      <a-sphere position="14 0 0" radius="0.5" src="#mars-tex"></a-sphere>
+    </a-entity>
+    <!-- Jupiter -->
+    <a-entity id="jupiter-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 22000; easing: linear">
+      <a-sphere position="18 0 0" radius="1.8" src="#jupiter-tex"></a-sphere>
+    </a-entity>
+    <!-- Saturn -->
+    <a-entity id="saturn-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 30000; easing: linear">
+      <a-sphere position="22 0 0" radius="1.6" src="#saturn-tex"></a-sphere>
+      <a-ring src="#saturn-ring-tex" position="22 0 0" rotation="90 0 0" radius-inner="1.9" radius-outer="3"
+        material="side: double; transparent: true"></a-ring>
+    </a-entity>
+    <!-- Uranus -->
+    <a-entity id="uranus-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 38000; easing: linear">
+      <a-sphere position="26 0 0" radius="1.2" src="#uranus-tex"></a-sphere>
+    </a-entity>
+    <!-- Neptune -->
+    <a-entity id="neptune-orbit" animation="property: rotation; to: 0 360 0; loop: true; dur: 46000; easing: linear">
+      <a-sphere position="30 0 0" radius="1.2" src="#neptune-tex"></a-sphere>
+    </a-entity>
+
+    <a-entity position="0 20 40" rotation="-30 0 0">
+      <a-camera look-controls wasd-controls></a-camera>
+    </a-entity>
+  </a-scene>
+</body>
+
+</html>
